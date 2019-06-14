@@ -11,31 +11,30 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <p>
     <%= f.label :rent_name, "物件名" %><br>
     <%= f.text_field :rent_name %>
-  </div>
+  </p>
 
-  <div class="field">
+  <p>
     <%= f.label :charge, "賃料" %><br>
     <%= f.number_field :charge %>円
-  </div>
+  </p>
 
-  <div class="field">
+  <p>
     <%= f.label :address, "住所" %><br>
     <%= f.text_field :address %>
-  </div>
+  </p>
 
-  <div class="field">
+  <p>
     <%= f.label :age, "築年数" %><br>
     <%= f.number_field :age %>年
-  </div>
+  </p>
 
-
-  <div class="field">
+  <p>
     <%= f.label :note, "備考" %><br>
     <%= f.text_area :note %>
-  </div>
+  </p>
 
   <hr>
 
@@ -43,15 +42,15 @@
   <%= f.fields_for :stations do |df| %>
     <h4>最寄り駅<%= i %></h4>
     <%= df.label :route_name, "路線名" %><br>
-    <%= df.text_field :route_name %><br>
+    <%= df.text_field :route_name %><br><br>
     <%= df.label :station_name, "駅名" %><br>
     <%= df.text_field :station_name %><br><br>
     <%= df.label :walking_min, "徒歩分数" %><br>
-    <%= df.number_field :walking_min %>分<br>
+    <%= df.number_field :walking_min %>分<br><br>
     <% i += 1 %>
   <% end %>
-
+<br>
   <div class="actions">
-    <%= f.submit "登録する" %>
+    <%= f.submit %>
   </div>
 <% end %>

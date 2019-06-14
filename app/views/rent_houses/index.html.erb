@@ -20,7 +20,7 @@
     <% @rent_houses.each do |rent_house| %>
       <tr>
         <td class="list_1"><%= rent_house.rent_name %></td>
-        <td class="list_1"><%= rent_house.charge %>円</td>
+        <td class="list_1"><%= number_with_delimiter(rent_house.charge) %>円</td>
         <td class="list_2"><%= rent_house.address %></td>
         <td class="list_3"><%= rent_house.age %>年</td>
         <td class="list_4"><%= rent_house.note %></td>
