@@ -1,0 +1,25 @@
+.contents {
+  margin: 30px;
+}
+
+.contents th,td {
+  padding: 5px;
+}
+
+.list_1 {
+  width: 100px;
+}
+
+.list_2 {
+  width: 200px;
+}
+
+
+.list_3 {
+  width: 50px;
+}
+
+
+.list_4 {
+  width: 500px;
+}
