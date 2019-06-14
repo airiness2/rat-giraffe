@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>RentHouses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Price</th>
+      <th>Note</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rent_houses.each do |rent_house| %>
+      <tr>
+        <td><%= rent_house.rent_name %></td>
+        <td><%= rent_house.charge %></td>
+        <td><%= rent_house.address %></td>
+        <td><%= rent_house.age %></td>
+        <td><%= rent_house.note %></td>
+        <td><%= link_to 'Show', rent_house %></td>
+        <td><%= link_to 'Edit', edit_rent_house_path(rent_house) %></td>
+        <td><%= link_to 'Destroy', rent_house, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New RentHouse', new_rent_house_path %>
