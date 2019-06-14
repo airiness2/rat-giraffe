@@ -10,6 +10,7 @@ class RentHousesController < ApplicationController
 
   def new
     @rent_house = RentHouse.new
+    @rent_house.stations.build
   end
 
   def edit
@@ -17,6 +18,7 @@ class RentHousesController < ApplicationController
 
   def create
     @rent_house = RentHouse.new(rent_house_params)
+    @rent_house.stations.build
 
     if @rent_house.save
       redirect_to @rent_house, notice: '物件は正常に登録されました。'
@@ -44,6 +46,7 @@ class RentHousesController < ApplicationController
     end
 
     def rent_house_params
-      params.require(:rent_house).permit(:rent_name, :age, :address, :charge, :note)
+      params.require(:rent_house).permit(:rent_name, :age, :address, :charge,
+         :note, stations_attributes: [:route_name, :station_name, :walking_min])
     end
 end

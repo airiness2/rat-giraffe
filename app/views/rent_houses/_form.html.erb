@@ -37,6 +37,23 @@
     <%= f.text_field :note %>
   </div>
 
+  <hr>
+
+  <%= f.fields_for :stations do |s| %>
+  <div class="field">
+    <%= s.label :route_name %>
+    <%= s.text_field :route_name %>
+  </div>
+  <div class="field">
+    <%= s.label :station_name %>
+    <%= s.text_field :station_name %>
+  </div>
+  <div class="field">
+    <%= s.label :walking_min %>
+    <%= s.number_field :walking_min %>
+  </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
